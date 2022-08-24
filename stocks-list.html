@@ -586,67 +586,10 @@
                   <option value="0">Sélectionnez le nom de l'article </option>
 
               </select>    
-<<<<<<< HEAD
-              <script>
-                let list_nom;
-                const getNomArticle_url =
-	                "http://localhost:5000/article/all";
 
-                // Defining async function
-                async function getapi(url) {
-	
-	                // Storing response
-	                const response = await fetch(url);
-	
-	                // Storing data in form of JSON
-	               var data = await response.json();
-                 console.log("début de la liste");
-	                console.log(data);
-                  list_nom = data;
-
-	                if (response) {
-		                hideloader();
-	                }
-                  remplir(data);
-	                return data;
-                }
-                // Calling that async function
-                getapi(getNomArticle_url);
-                console.log("voici la liste des noms");
-                console.log(list_nom);
-                // Function to hide the loader
-                function hideloader() {
-	
-                }
-                let T = `<tr>
-                  <th>#</th>
-		              <th>Nom</th>
-                  <th>Quantite</th>
-                  <th>Date</th>
-                  <th>Options</th>
-		              </tr>`;
-                for (let r of data.data) {
-		              T += `<tr>
-                    <td>${r.ID_PRODUIT} </td>      
-	                  <td>${r.NOM_PRODUIT} </td>
-	                  <td>${r.QUANTITE}</td>
-	                  <td>${r.CREATED_AT} </td> <tr>`
-                }
-                  (data){
-                   var charger = document.getElementById("entree"); 
-                   let i=1;
-                   data.data.forEach(function(produit){
-                    //entree.options.indice[indice] = new Option(NOM_PRODUIT, indice);
-                    console.log(produit.NOM_PRODUIT);
-                   })
-                    
-                }
-                
-              </script>                  
-=======
-                           
->>>>>>> 158fd26979b3e8cbaf56e6d78b8c4e9051eba50a
-                
+             
+                          
+               
             </div>
     
             <div class="col-12">

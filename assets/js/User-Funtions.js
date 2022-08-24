@@ -1,28 +1,5 @@
 const path = "http://localhost:5000";
 
-//fonction de connexion de l'utilisateur
-/*$('#userLogin').livequery('submit',   function(e){ e.preventDefault() ; 
-  var codeLogin = document.getElementById("yourUsername").value;
-  var mot_de_passe = document.getElementById("yourPassword").value;
-  var formData = new FormData();
-  formData.append('email', codeLogin);
-  formData.append('password', mot_de_passe);
-     
-  if (email=codeLogin && password = mot_de_passe ){
-
-  };
-
-  console.log(data);
-
-  $.post("http://localhost:5000/user/login", data, function(puerto){
-
-   console.log(puerto) ;
-  }, 'json');
-
-  return ("indexe.html");
-
-});*/
-
 // fonction pour enregister un revendeur
 $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ; 
     var client = document.getElementById("client").value;
@@ -30,6 +7,8 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     var code = document.getElementById("suffixe").value;
     var telephone = document.getElementById("phone").value;
     var mot_de_passe = document.getElementById("mdp").value;
+    var estLimite = document.getElementById("EstLimite");
+    var montantLimite = document.getElementById(montantLimite);
     var offre = document.getElementById("offre").value;
     var precompte = document.getElementById("precompte").value;
     var ristourne = document.getElementById("ristourne").value;
@@ -38,7 +17,7 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     var date_creation = document.getElementById("date").value;
     var etat_signature = document.getElementById("etat").value;
     var date_signature = document.getElementById("dateSignature").value;
-    /*var cni = document.getElementById("cni").value;
+    var cni = document.getElementById("cni").value;
     var patente = document.getElementById("patente").value;
     var nui = document.getElementById("nui").value;*/
     var etat_validation = document.getElementById("etatValidation").value;
@@ -46,60 +25,10 @@ $('#saveRevendeur').livequery('submit',   function(e){ e.preventDefault() ;
     var etat_stock = document.getElementById("etatStock").value;
     var date_expedition = document.getElementById("dateExpedition").value;
     var adresse = document.getElementById("Adresse").value;
-    var formData = new FormData();
-    formData.append('parrain', "0");
-    formData.append('id_role', "1");
-    formData.append('nom_user', client);
-    formData.append('login', code);
-    formData.append('email', email);
-    formData.append('telephone', telephone);
-    formData.append('password', mot_de_passe);
-    formData.append('est_limite', "0");
-    formData.append('montant_limite', "0"); 
-    formData.append('offre', offre);
-    formData.append('details_offre', details);
-    formData.append('engagement', engagement);
-    //formData.append('date_creation', date_creation);
-    formData.append('etat_signature', etat_signature);
-    formData.append('date_signature', date_signature);
-    formData.append('cni', "0");
-    formData.append('patente', "0");
-    formData.append('nui', "0");
-    formData.append('etat_validation', etat_validation);
-    formData.append('date_validation', date_validation);
-    formData.append('etat_stock', etat_stock);
-    formData.append('date_expedition', date_expedition);
-    formData.append('adresse', adresse);
-
-    formData.append('precompte', precompte);
-    formData.append('ristourne', ristourne);
-    /* for (var pair of formData.entries()) {
-        console.log(pair[0]+ ', ' + pair[1]); 
-    } */
-  /*  $.ajax({
-
-    formData.append('precompte', "2%");
-    formData.append('ristourne', "5%");
-   // for (var pair of formData.entries()) {
-        //console.log(pair[0]+ ', ' + pair[1]); 
-    //}
-    /*$.ajax({
-
-        url: "http://localhost:5000/user/new",
-        data: formData,
-        processData: false,
-        contentType: false,
-        type: 'POST',
-        success: function(data){
-            alert(data);
-        }
-    });*/
-
-    var data  = {email: "test@gmail.com", telephone: "6555"};
-  
- var data  = {parrain: 1, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: 0,
-  montant_limite: 0, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
-  cni: 0, patente: 0, nui: 0, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
+        
+ var data  = {parrain: 1, id_role: 1, nom_user: client, email: email, login: code , telephone: telephone, password: mot_de_passe, est_limite: estLimite,
+  montant_limite: montantLimite, offre: offre, details_offre: details, engagement: engagement, etat_signature: etat_signature, date_signature: date_signature,
+  cni: cni, patente: patente, nui: nui, etat_validation: etat_validation, date_validation: date_validation, etat_stock: etat_stock, date_expedition: date_expedition, 
   adresse: adresse, precompte: precompte, ristourne: ristourne};
   console.log(data);
 

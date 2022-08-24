@@ -489,7 +489,9 @@
                       
                       <div id="qrCode"></div>
                       <script>
-                        var value  ="https://demos.telerik.com/kendo-ui/dataviz/overview/index.html" ;                        $("#qrCode").kendoQRCode({
+                        console.log(localStorage.getItem('user').LOGIN);
+                        var value  = localStorage.getItem('user');                 
+                              $("#qrCode").kendoQRCode({
                           value: value,
                           color: "#008000" , 
                            size: 173,
