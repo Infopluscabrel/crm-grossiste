@@ -11,7 +11,7 @@ $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ;
   
   console.log(data);
 
-  $.post("http://localhost:5000/user/login", data, function(puerto){
+  $.post("http://localhost:5000/user/login/grossiste", data, function(puerto){
     window.location.href="file:///C:/Users/dell/Desktop/distributeurDashboard/online/crm-paiecash/index.html";
    console.log(puerto.data[0]) ;
    isLoggedIn(puerto.data[0]);
