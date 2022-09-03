@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Grossiste Paiecash - Gestion de stocks/ Parametres Articles </title>
+  <title>Grossiste Paiecash</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -29,7 +29,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
+ 
 </head>
 
 <body>
@@ -70,7 +70,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
-              You have 4 new notifications
+             Vous avez 4 nouvelles notifications
               <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             <li>
@@ -205,7 +205,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/default-avatar.png" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default-avatar.png " alt="" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -214,7 +214,7 @@
               <h6>Kevin Anderson</h6>
               <span>Web Designer</span>
             </li>
-            <li>
+            <li>  
               <hr class="dropdown-divider">
             </li>
 
@@ -263,7 +263,7 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
+ <!-- ======= Sidebar ======= -->
  <aside id="sidebar" class="sidebar">
 
   <ul class="sidebar-nav" id="sidebar-nav">
@@ -405,224 +405,240 @@
   
   </aside><!-- End Sidebar-->
 
-
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Gestion des Stocks</h1>
+      <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Gestion des stocks</li>
-          <li class="breadcrumb-item active">Articles</li>
+          <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
+    <section class="section dashboard">
       <div class="row">
-        <div class="col-lg-12">
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Liste des Articles 
-               
-                <button type="" class="btn btn-primary" id="nouvelArticle"  data-toggle="modal" data-target="#ajoutArticle">Ajouter article</button>
-            
-              </h5>
-              <p></p>
+        <!-- Left side columns -->
+        
+          <div class="row">
 
-              <!-- Table with stripped rows -->
-              <table class="table">
-                <table class="table datatable" id="list-article">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Nom</th>
-                      <th scope="col">Quantite</th>
-                      <th scope="col">Date</th>
-                    </tr>
-                  </thead>
-                <tbody>                               
-                   
-                </tbody>
-                </table>
-              </table>
-              <!-- End Table with stripped rows -->
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
 
-            </div>
-          </div>
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
-        </div>
-      </div>
-    </section>
-
-
-    <!-- modal ajout stock-->
-<div class="modal fade show" id="ajoutArticlelast" tabindex="-1" role="dialog" aria-labelledby="ajoutArticle"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Distributeur Paiecash</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-            <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Modifier une Entrée</h5>
-          
-              </div>
-          
-              <form class="row g-3 needs-validation" novalidate>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Nom</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom de l'article obligatoire!</div>
+                    <li><a class="dropdown-item" href="#">Jours</a></li>
+                    <li><a class="dropdown-item" href="#">Ce mois</a></li>
+                    <li><a class="dropdown-item" href="#">Cette année</a></li>
+                  </ul>
                 </div>
-          
-                <div class="col-12">
-                  <label for="yourQuantite" class="form-label">La Quantite</label>
-                  <input type="number" name="quantite" class="form-control" id="yourQuantite" required>
-                  <div class="invalid-feedback">Quantité obligatioire!</div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Produits en Stock <span>| Du jours</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
                 </div>
                 
-                <div class="col-12">
-                  <label for="prix" class="form-label">Prix HT  </label>
-                  <input type="number" name="prix" class="form-control" id="prix" required>
-                  <div class="invalid-feedback">prix hors taxe obligatioire!</div>
-                </div>         
-                <div class="col-12">
-                  <label for="yourDate" class="form-label">Date</label>
-                  <input type="date" name="Date" class="form-control" id="yourDate" required>
-                  <div class="invalid-feedback">date d'ajout du produit obigatoire!</div>
-                </div>
-               
-              </form>
-          
-           
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Sauvegarder</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- End modal -->
-
-    <!-- modal plus d'informations du joueur -->
-    <div class="modal fade show" id="plusinfo" tabindex="-1" role="dialog" aria-labelledby="plusinfo"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Distributeur Paiecash</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <div>
-                Nom du stock : Maillots
-
-                Quantite :  100
-
-                Date : 12-07-2022 
-
-
               </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
+            </div><!-- End Entries Card -->
+
+
+                <!-- Sales Card -->
+                <div class="col-xxl-4 col-md-6">
+                  <div class="card info-card sales-card">
+                
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+                
+                        <li><a class="dropdown-item" href="#">Jours</a></li>
+                        <li><a class="dropdown-item" href="#">Ce mois</a></li>
+                        <li><a class="dropdown-item" href="#">Cette année</a></li>
+                      </ul>
+                    </div>
+                
+                    <div class="card-body">
+                      <h5 class="card-title">Produits sorties <span>| Du jours</span></h5>
+                
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-cart"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>145</h6>
+                          <span class="text-success small pt-1 fw-bold">12%</span> <span
+                            class="text-muted small pt-2 ps-1">increase</span>
+                
+                        </div>
+                      </div>
+                    </div>
+                
+                  </div>
+                </div><!-- End Sales Card -->
+
+                <!-- Clients niveau 1 Card -->
+                <div class="col-xxl-4 col-md-6">
+                  <div class="card info-card sales-card">
+                
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+                
+                        <li><a class="dropdown-item" href="#">Jours</a></li>
+                        <li><a class="dropdown-item" href="#">Ce mois</a></li>
+                        <li><a class="dropdown-item" href="#">Cette année</a></li>
+                      </ul>
+                    </div>
+                
+                    <div class="card-body">
+                      <h5 class="card-title">Mes détaillants </h5>
+                
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>145</h6>
+                          <span class="text-success small pt-1 fw-bold">12%</span> <span
+                            class="text-muted small pt-2 ps-1">increase</span>
+                
+                        </div>
+                      </div>
+                    </div>
+                    <div> 
+                      <a class="nav-link collapsed" href="liste-meilleurs-CLT1.html">
+                        <i class="bi bi-plus"></i>
+                        <span>Voir les meilleurs détaillants</span>
+                      </a>
+                             
+                </div>
+                  </div>
+                </div><!-- End Clients client niveau 1 Card -->
+
+                <!-- Clients niveau 2 Card -->
+                <div class="col-xxl-4 col-md-6">
+                  <div class="card info-card sales-card">
+                
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+                
+                        <li><a class="dropdown-item" href="#">Jours</a></li>
+                        <li><a class="dropdown-item" href="#">Ce mois</a></li>
+                        <li><a class="dropdown-item" href="#">Cette année</a></li>
+                      </ul>
+                    </div>
+                
+                    <div class="card-body">
+                      <h5 class="card-title">Leurs Clients <span>| Du jours</span></h5>
+                
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>145</h6>
+                          <span class="text-success small pt-1 fw-bold">12%</span> <span
+                            class="text-muted small pt-2 ps-1">increase</span>
+                
+                        </div>
+                      </div>
+                    </div>
+                    <div> 
+                        <a class="nav-link collapsed" href="liste-meilleur-CLT2.html">
+                          <i class="bi bi-plus"></i>
+                          <span>Voir les meilleurs clients</span>
+                        </a>
+                               
+                  </div>
+                  </div>
+                </div><!-- End Clients niveau 2 Card -->
+            
+                
+
            
+
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- End modal -->
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Aujourd'hui</a></li>
+                <li><a class="dropdown-item" href="#">Ce moi</a></li>
+                <li><a class="dropdown-item" href="#">Cette année</a></li>
+              </ul>
+            </div>
+
+            
+                
+
+         
+          
+          
+    </section>
 
   </main><!-- End #main -->
 
-
-<!-- Modal -->
-<div class="modal fade" id="ajoutArticle" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Distributeur Paiecash</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    <div class="modal-body">
-      <div class="card mb-3">
-    
-        <div class="card-body">
-    
-          <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Ajouter un Article</h5>
-    
-          </div>
-    
-          <form class="row g-3 needs-validation" novalidate id="saveArticle">
-            <div class="col-12">
-              <label for="nom" class="form-label">Nom de l'article</label>
-              <input type="text" name="nom" class="form-control" id="nom" required>
-              <div class="invalid-feedback">Entrez le nom de l'article!</div>
-            </div>
-    
-            <div class="col-12">
-              <label for="quantite" class="form-label">Quantité</label>
-              <input type="number" name="quantite" class="form-control" id="quantite" required>
-              <div class="invalid-feedback">Entrez la quantité de l'article!</div>
-            </div>
-    
-            <div class="col-12">
-              <label for="prix" class="form-label">Prix HT</label>
-              <input type="number" name="prix" class="form-control" id="prix-article" required>
-              <div class="invalid-feedback">Entrez le prix unitaire du produit!</div>
-            </div>
-            
-            <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit">Ajouter</button>
-              
-            </div>
-            
-          </form>
-    
-        </div>
-      </div>
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>PaieCash</span></strong>. All Rights Reserved
     </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+     
     </div>
-  </div>
-</div>
-<footer id="footer" class="footer">
-  <div class="copyright">
-    &copy; Copyright <strong><span>PaieCash</span></strong>. All Rights Reserved
-  </div>
-  
-</footer><!-- End Footer -->
-
-
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+
   <!-- Vendor JS Files -->
-  <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script> -->
-
- 
-<!-- <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script> -->
-
-  <script src="assets/vendor/php-Email-form/validate.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.js.map"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/quill/quill.min.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
@@ -630,29 +646,12 @@
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
 
- <!-- additional links  -->
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <!-- end   -->
-
-  <!-- jquery  JS Files -->
-
-    
-    
+    <!-- jquery  JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
-      <script src="assets/vendor/jquery/jquery.livequery.js"></script>
-     
-      <script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
-        
-      <!-- Template Main JS File -->
-      <script src="assets/js/main.js"></script>
-  <script src="assets/js/custum.js"></script>
-  <script src="assets/js/Article-Fonctions.js"></script>
+    <script src="assets/vendor/jquery/jquery.livequery.js"></script>
+    <script src="assets/vendor/jquery/popper.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 

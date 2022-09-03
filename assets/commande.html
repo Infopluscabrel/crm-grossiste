@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home / Enregistrer Commande - Détaillant PaieCash</title>
+  <title>Grossiste Paiecash - Commandes</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -29,12 +29,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.1.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -45,7 +40,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Détaillant Paiecash</span>
+        <span class="d-none d-lg-block">Grossiste Paiecash</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -210,7 +205,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default-avatar.png " alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -274,7 +269,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="accueil.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -386,7 +381,7 @@
         </li><!-- End Register Page Nav -->
     
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-login.html">
+          <a class="nav-link collapsed" href="index.html">
             <i class="bi bi-box-arrow-in-right"></i>
             <span>Login</span>
           </a>
@@ -413,166 +408,309 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Enregistrer Commandes</h1>
+      <h1>Gestion des Commandes</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Enregistrer Commandes</li>
+          <li class="breadcrumb-item"><a href="accueil.html">Home</a></li>
+          <li class="breadcrumb-item">Gestion des Commandes</li>
+          <li class="breadcrumb-item active">Liste des Commandes</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <div class="container">
 
-      
-        <div class="container">
-          <form id="SaveLigneCommande" class="savevente">
-          <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
 
-              <div class="card mb-3">
-                <div class="d-flex justify-content-center py-4">
-                  <a href="index.html" class="logo d-flex align-items-center w-auto">
-                    <img src="assets/img/logo.png" alt="">
-                    <span class="d-none d-lg-block">Détaillant Paiecash</span>
-                  </a>
-                </div>
-                <div class="card-body">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Liste des Commandes 
+                
+                <button type="" class="btn btn-primary" id="entreestock"  data-toggle="modal" data-target="#entreeStock">Entrée stock</button>
+                
+            
+              </h5>
+              <p></p>
 
-                  <div class="select">
-                    <select name="article_id" class="form-control" id="entree">
-                        <option value="0">Sélectionnez le nom de l'article </option>
-      
-                    </select>  <br>
-                  
-
-                    <div class="col-12">
-                      <label for="quantity" class="form-label">Quantité</label>
-                      <input type="number" name="quantitearticle" class="form-control" id="quantity" required>
-                      <div class="invalid-feedback">S'il vous plait entrez votre mot de passe!</div>
-                    </div><br>
-
-                    <div class="col-12">
-                      <label for="prix-unitaire" class="form-label">Prix Unitaire</label>
-                      <input readonly="readonly" name="prix-unitaire" class="form-control" id="prix_unitaire" value="" required>
-                      
-                    </div><br>
-                    <div class="col-12">
-                      <label for="prix-total" class="form-label">Prix Total</label>
-                      <input readonly="prix" name="prix-total" class="form-control" id="prix_total" value="0" required>
-                    </div>
-                    <br>
-                    <div class="col-12-sm-6">
-                      <div><a>
-                        <button class="btn btn-primary w-100" type="submit" id="AjouterProduit">Ajouter</button>
-                      </a></div><br>
-                      <div><a href="facture.html"> <button class="btn btn-primary w-100" id="ValiderCommande" type="submit">Valider</button></a></div>                              
-                    </div>
-                  
-                  </form>
-
-                </div>
-              </div>
-
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-          
-               
-              </div>
+              <!-- Table with stripped rows -->
+              <table class="table datatable" id="stock">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                  
+                                   
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
 
             </div>
           </div>
+
         </div>
+      </div>
+    </section>
 
+
+    <!-- modal ajout stock-->
+<div class="modal fade show" id="entreeStocklast" tabindex="-1" role="dialog" aria-labelledby="entreeStock"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Grossiste Paiecash</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+            <div class="pt-4 pb-2">
+                <h5 class="card-title text-center pb-0 fs-4">Modifier une Commande</h5>
+          
+              </div>
+          
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-12">
+                  <label for="yourName" class="form-label">Nom</label>
+                  <input type="text" name="name" class="form-control" id="yourName" required>
+                  <div class="invalid-feedback">Nom du stock obligatoire!</div>
+                </div>
+          
+                <div class="col-12">
+                  <label for="yourQuantite" class="form-label">Quantite</label>
+                  <input type="number" name="quantite" class="form-control" id="yourQuantite" required>
+                  <div class="invalid-feedback">Quantité obligatioire!</div>
+                </div>
+          
+                         
+                <div class="col-12">
+                  <label for="prix" class="form-label"> Prix </label>
+                  <input type="number" name="prix" class="form-control" id="prix" required>
+                  <div class="invalid-feedback">date de naissance du joueur!</div>
+                </div>
+                <div class="col-12">
+                  <label for="Date" class="form-label">Date </label>
+                  <input type="date" name="Date" class="form-control" id="Date" required>
+                  <div class="invalid-feedback">date de modification de la commande!</div>
+                </div>
+              </form>
+          
+           
       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- End modal -->
+
+    <!-- modal plus d'informations du stock -->
+    <div class="modal fade show" id="plusinfo" tabindex="-1" role="dialog" aria-labelledby="plusinfo"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Grossiste Paiecash</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div>
+                <table class="table datatable" id="commandeclt">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                      
+                                       
+                    </tbody>
+                  </table>
+
+
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
     
+    <!-- End modal -->
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+
+<!-- Modal -->
+<div class="modal fade" id="entreeStock" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Grossiste Paiecash</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <div class="modal-body">
+      <div class="card mb-3">
+    
+        <div class="card-body">
+    
+          <div class="pt-4 pb-2">
+            <h5 class="card-title text-center pb-0 fs-4">Faire une entrée en stock</h5>
+    
+          </div>
+    
+          <div class="pagetitle">
+            <h1>Enregistrer Commandes</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Enregistrer Commandes</li>
+              </ol>
+            </nav>
+          </div><!-- End Page Title -->
+          <div class="container">
+      
+            
+              <div class="container">
+                <form id="SaveLigneCommande" class="savevente">
+                <div class="row justify-content-center">
+                  <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+      
+                    <div class="card mb-3">
+                      <div class="d-flex justify-content-center py-4">
+                        <a href="index.html" class="logo d-flex align-items-center w-auto">
+                          <img src="assets/img/logo.png" alt="">
+                          <span class="d-none d-lg-block">Détaillant Paiecash</span>
+                        </a>
+                      </div>
+                      <div class="card-body">
+      
+                        <div class="select">
+                          <select name="article_id" class="form-control" id="entree">
+                              <option value="0">Sélectionnez le nom de l'article </option>
+            
+                          </select>  <br>
+                        
+      
+                          <div class="col-12">
+                            <label for="quantity" class="form-label">Quantité</label>
+                            <input type="number" name="quantitearticle" class="form-control" id="quantity" required>
+                            <div class="invalid-feedback">S'il vous plait entrez votre mot de passe!</div>
+                          </div><br>
+      
+                          <div class="col-12">
+                            <label for="prix-unitaire" class="form-label">Prix Unitaire</label>
+                            <input readonly="readonly" name="prix-unitaire" class="form-control" id="prix_unitaire" value="" required>
+                            
+                          </div><br>
+                          <div class="col-12">
+                            <label for="prix-total" class="form-label">Prix Total</label>
+                            <input readonly="prix" name="prix-total" class="form-control" id="prix_total" value="0" required>
+                          </div>
+                          <br>
+                          <div class="col-12-sm-6">
+                            <div><a>
+                              <button class="btn btn-primary w-100" type="submit" id="AjouterProduit">Ajouter</button>
+                            </a></div><br>
+                            <div><a href="facture.html"> <button class="btn btn-primary w-100" id="ValiderCommande" type="submit">Valider</button></a></div>                              
+                          </div>
+                        
+                        </form>
+      
+                      </div>
+                    </div>
+      
+                    <div class="credits">
+                      <!-- All the links in the footer should remain intact. -->
+                      <!-- You can delete the links only if you purchased the pro version. -->
+                      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                
+                     
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+      
+            
+      
+          </div>
+          
+      
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+ <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>PaieCash</span></strong>. All Rights Reserved
     </div>
     
   </footer><!-- End Footer -->
 
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script> -->
+
+ 
+<!-- <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+  <script src="assets/vendor/php-Email-form/validate.js"></script>
   <script src="assets/vendor/quill/quill.min.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/chart.js/chart.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.livequery.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script>
 
-    $(document).ready(function () {
-      const getNomArticle_url =
-        "http://localhost:5000/article/all";
-      getapi(getNomArticle_url);
-    });
+ <!-- additional links  -->
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- end   -->
 
-    let list_nom;
-    const getNomArticle_url =
-      "http://localhost:5000/article/all";
+  <!-- jquery  JS Files -->
 
-    // Defining async function
-    async function getapi(url) {
-
-      // Storing response
-      const response = await fetch(url);
-
-      // Storing data in form of JSON
-      var data = await response.json();
-      console.log("début de la liste");
-      // console.log(data);
-      list_nom = data;
-
-      if (response) {
-        hideloader();
-      }
-      console.log("appel remplir" + data);
-      remplir(data);
-      return data;
-    }
-    // Calling that async function
-    getapi(getNomArticle_url);
-    console.log("voici la liste des noms");
-    console.log(list_nom);
-    // Function to hide the loader
-    function hideloader() {
-
-    }
-   
-    function remplir(data) {
-
-      var options = "";
-      data.data.forEach(function (produit) {
-        //entree.options.indice[indice] = new Option(NOM_PRODUIT, indice);
-        options += `<option value="${produit.ID_PRODUIT}"> ${produit.NOM_PRODUIT} </option>`;
-        console.log(produit.NOM_PRODUIT);
-      })
-
-      document.getElementById("entree").innerHTML = options;
-      console.log(options);
-    }
-
-  </script>
-  <script src="assets/js/commande.js  "></script>
-
+    
+    
+    
 </body>
 
 </html>

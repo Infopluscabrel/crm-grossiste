@@ -4,6 +4,7 @@ const path = "http://localhost:5000";
 $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ; 
   var codeLogin = $('#yourUsername').val();
   var mot_de_passe = $('#yourPassword').val() ;
+  
   var data = {
     login: codeLogin,
     password: mot_de_passe
@@ -12,11 +13,15 @@ $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ;
   console.log(data);
 
   $.post("http://localhost:5000/user/login/grossiste", data, function(puerto){
-    window.location.href="file:///C:/Users/dell/Desktop/distributeurDashboard/online/crm-paiecash/index.html";
+    if (puerto.status==200){
+      alert("connexion réussie");
+      window.location.href="accueil.html";}
+    else {
+      alert("Vous voulez accéder a un compte qui n'existe pas ");
+    }  
    console.log(puerto.data[0]) ;
    isLoggedIn(puerto.data[0]);
-   
-  
+    
   }, 'json');
   
   return false;
@@ -32,7 +37,7 @@ function isLoggedIn (user) {
     // ...
    // const { token, user } = puerto.body
     var user =localStorage.getItem('user');
-    console.log(JSON. parse(user)) ;
+    console.log(JSON.parse(user)) ;
 if(!user) {
     return 0 ;
 }
