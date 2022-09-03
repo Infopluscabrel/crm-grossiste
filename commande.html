@@ -426,7 +426,7 @@
             <div class="card-body">
               <h5 class="card-title">Liste des Commandes 
                 
-                <button type="" class="btn btn-primary" id="entreestock"  data-toggle="modal" data-target="#entreeStock">Entrée stock</button>
+                <button type="" class="btn btn-primary" id="entreestock"  data-toggle="modal" data-target="#entreeStock">Passer Commande</button>
                 
             
               </h5>
@@ -573,19 +573,11 @@
         <div class="card-body">
     
           <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Faire une entrée en stock</h5>
+            <h5 class="card-title text-center pb-0 fs-4">Enregistrer une Commande</h5>
     
           </div>
     
-          <div class="pagetitle">
-            <h1>Enregistrer Commandes</h1>
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">Enregistrer Commandes</li>
-              </ol>
-            </nav>
-          </div><!-- End Page Title -->
+          
           <div class="container">
       
             
@@ -598,7 +590,7 @@
                       <div class="d-flex justify-content-center py-4">
                         <a href="index.html" class="logo d-flex align-items-center w-auto">
                           <img src="assets/img/logo.png" alt="">
-                          <span class="d-none d-lg-block">Détaillant Paiecash</span>
+                          <span class="d-none d-lg-block">Grossiste Paiecash</span>
                         </a>
                       </div>
                       <div class="card-body">
@@ -707,8 +699,65 @@
   <!-- end   -->
 
   <!-- jquery  JS Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/jquery.livequery.js"></script>
+  <script>
 
-    
+    $(document).ready(function () {
+      const getNomArticle_url =
+        "http://localhost:5000/article/all/grossiste";
+      getapi(getNomArticle_url);
+    });
+
+
+    let list_nom;
+    const getNomArticle_url =
+      "http://localhost:5000/article/all/grossiste";
+
+    // Defining async function
+    async function getapi(url) {
+
+      // Storing response
+      const response = await fetch(url);
+
+      // Storing data in form of JSON
+      var data = await response.json();
+      console.log("début de la liste");
+      // console.log(data);
+      list_nom = data;
+
+      if (response) {
+        hideloader();
+      }
+      console.log("appel remplir" + data);
+      remplir(data);
+      return data;
+    }
+    // Calling that async function
+    getapi(getNomArticle_url);
+    console.log("voici la liste des noms");
+    console.log(list_nom);
+    // Function to hide the loader
+    function hideloader() {
+
+    }
+   
+    function remplir(data) {
+
+      var options = "";
+      data.data.forEach(function (produit) {
+        //entree.options.indice[indice] = new Option(NOM_PRODUIT, indice);
+        options += `<option value="${produit.ID_PRODUIT}"> ${produit.NOM_PRODUIT} </option>`;
+        console.log(produit.NOM_PRODUIT);
+      })
+
+      document.getElementById("entree").innerHTML = options;
+      console.log(options);
+    }
+
+  </script>
+  <script src="assets/js/commande.js  "></script>    
     
     
 </body>

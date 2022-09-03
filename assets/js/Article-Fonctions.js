@@ -81,7 +81,7 @@ function show(data) {
 		tab += `<tr>
     <td>${r.ID_PRODUIT}</td>      
 	  <td>${r.NOM_PRODUIT}</td>
-	  <td>${r.qte_grossiste}</td>
+	  <td>${r.QUANTITE}</td>
 	  <td>${r.CREATED_AT}</td>
     <td><ul class="list-inline m-0">          
     <li class="list-inline-item">
