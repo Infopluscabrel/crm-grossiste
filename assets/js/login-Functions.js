@@ -14,7 +14,7 @@ $('#userLogin').livequery('submit',   function(e){ e.preventDefault() ;
 
   $.post("http://localhost:5000/user/login/grossiste", data, function(puerto){
     if (puerto.status==200){
-      alert("connexion réussie");
+      postMessage("You are logged succesfully!");
       window.location.href="accueil.html";}
     else {
       alert("Vous voulez accéder a un compte qui n'existe pas ");
