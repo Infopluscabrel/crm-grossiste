@@ -41,20 +41,22 @@ async function getapi() {
         
    var data  = { user_id: ""+user_id};
     console.log(data);
-	$.get("http://localhost:5000/article/all/grossiste", data, function(puerto){
-    var user = JSON.parse( localStorage.getItem('user'));
-    console.log(user);
-    var user_id = user.ID_USER;
+    if(user_id){
+	    $.get("http://localhost:5000/article/all/grossiste", data, function(puerto){
+        var user = JSON.parse( localStorage.getItem('user'));
+        console.log(user);
+        var user_id = user.ID_USER;
     
-    console.log(puerto); 
-    console.log(user_id);
-    if (puerto) {
-      hideloader();
-    }
-    show(puerto);
-    //location.reload();
-  });
-	// Storing data in form of JSON
+        console.log(puerto); 
+        console.log(user_id);
+        if (puerto) {
+          hideloader();
+        }
+        show(puerto);
+        //location.reload();
+      });
+	      // Storing data in form of JSON
+    }    show (data);
 }
 // Calling that async function
 getapi();

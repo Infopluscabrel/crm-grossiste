@@ -1,199 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Home/ Suivi des commandes - Distributeur Paiecash</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Distributeur Paiecash</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
-
-        <li class="nav-item">
-          <a href="#">Type d'offre</a> 
-        </li>
-        
-        <li class="nav-item">
-          <a href="#">Vendeur</a> 
-        </li>
-        <br><br>
-        <li class="nav-item">
-          <a href="#">Champ libre</a> 
-        </li>
-        <br><br>
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-            <i class=""></i><span>Type date</span><i
-              class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Création </span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Validation</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Signature</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="bi bi-circle"></i><span>Expedition</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Tables Nav -->
-        <li class="nav-item">
-          <a href="#">Date Min</a> 
-        </li>
+    <title>Suivi Commandes - Grossiste Paiecash</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.2.802/styles/kendo.default-v2.min.css" />
+  
+  <!-- qrcode  -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2022.2.802/js/kendo.all.min.js"></script>
+  
+  
+    <script src="assets/js/qrcode.js"></script>
+  
+  
+    <!-- =======================================================
+    * Template Name: NiceAdmin - v2.1.0
+    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+  </head>
+  
+  <body>
+  
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+  
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="accueil.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="">
+          <span class="d-none d-lg-block">Grossiste Paiecash</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div><!-- End Logo -->
+  
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center" method="POST" action="#">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div><!-- End Search Bar -->
+  
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+  
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle " href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li><!-- End Search Icon-->
+  
+          <li class="nav-item dropdown">
+  
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span>
+            </a><!-- End Notification Icon -->
+  
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                You have 4 new notifications
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+  
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+  
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+  
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+  
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all notifications</a>
+              </li>
+  
+            </ul><!-- End Notification Dropdown Items -->
+  
+          </li><!-- End Notification Nav -->
+  
+          <li class="nav-item dropdown">
+  
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span>
+            </a><!-- End Messages Icon -->
+  
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+              <li class="dropdown-header">
+                You have 3 new messages
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li class="dropdown-footer">
+                <a href="#">Show all messages</a>
+              </li>
+  
+            </ul><!-- End Messages Dropdown Items -->
+  
+          </li><!-- End Messages Nav -->
+  
+          <li class="nav-item dropdown pe-3">
+  
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+              <img src="assets/img/default-avatar.png " alt="Profile" class="rounded-circle">
+              <span class="d-none d-md-block dropdown-toggle ps-2" id="userconnect"> <script>
+                var user = localStorage.getItem('user');
+                var value = JSON.parse(user).LOGIN;
+                $('#userconnect').html(`${value}`);
+              </script></span>
+            </a><!-- End Profile Iamge Icon -->
+  
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li class="dropdown-header">
+                <h6 id="profil-title"><script>
+                  var user = localStorage.getItem('user');
+                  var value = JSON.parse(user).LOGIN;
+                  $('#profil-title').html(`${value}`);
+                </script></h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                  <i class="bi bi-gear"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                  <i class="bi bi-question-circle"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+  
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="index.html" id="signout">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+                <script>
+                  $('#signout').livequery('click',   function(e){ e.preventDefault() ; 
+                    var user = localStorage.getItem('user');
+                    var value = JSON.parse(user).LOGIN; 
+                    if (localStorage.getItem("user").LOGIN === value) {
+                      window.location.href="index.html";
+                    }else{
+                    }
+                  });  
+                </script>
+              </li>
+  
+            </ul><!-- End Profile Dropdown Items -->
+          </li><!-- End Profile Nav -->
+  
+        </ul>
+      </nav><!-- End Icons Navigation -->
+  
+    </header><!-- End Header -->
+  
 
-        <li class="nav-item">
-          <a href="#">Date Max</a> 
-        </li>
-
-        
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/default-avatar.png " alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
-  
+
     <ul class="sidebar-nav" id="sidebar-nav">
-  
+
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
-          <span>Accueil</span>
+          <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Gestion du Reseau</span><i
-            class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" href="parametres.html">
+          <i class="bi bi-book"></i>
+          <span>Parametres généraux</span>
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>CRM</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="revendeurs.html">
-              <i class="bi bi-circle"></i><span>Les Revendeurs </span>
+              <i class="bi bi-circle"></i><span>Les Grossistes</span>
             </a>
           </li>
           <li>
@@ -201,122 +329,116 @@
               <i class="bi bi-circle"></i><span>Resultats du réseau</span>
             </a>
           </li>
-         
+          
+          
         </ul>
-      </li><!-- End Tables Nav -->
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Finances</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="forms-elements.html">
+              <i class="bi bi-circle"></i><span>Gains</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>Resultats par Vendeur</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Finances</span><i
-            class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Gestion des Stocks</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-      
           <li>
-            <a href="footballeurs.html">
-              <i class="bi bi-circle"></i><span>Gains </span>
+            <a href="ajout-article.html">
+              <i class="bi bi-circle"></i><span>Parametres des Articles</span>
             </a>
           </li>
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>Resultats par Revendeur</span>
-            </a>
-          </li>
-      
-        </ul>
-      </li><!-- End Tables Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Gestion des Stocks</span><i
-            class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-  
           <li>
             <a href="stocks-list.html">
-              <i class="bi bi-circle"></i><span>Articles </span>
+              <i class="bi bi-circle"></i><span>Parametres de Stock</span>
             </a>
           </li>
-          <li>
-            <a href="entree-stock.html">
-              <i class="bi bi-circle"></i><span>Stocks</span>
-            </a>
-          </li>
-          <!--<li>
-            <a href="sortie-stock.html">
-              <i class="bi bi-circle"></i><span>Commandes</span>
-            </a>
-          </li>End Tables Nav -->
-  
-  
         </ul>
-      </li><!-- End Tables Nav -->  
-      
+      </li>
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="suivi-commande.html">
-          <i class="bi bi-book"></i>
-          <span>Suivi commande</span>
+        <a class="nav-link " href="commande.html">
+          <i class="bi bi-pen"></i>
+          <span>Enregistrer commandes</span>
         </a>
-      </li><!-- End suivi commande Nav -->
-  
-  
-  
-  
-  
-  
-      <li class="nav-heading">Pages</li>
-  
+      </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link " href="suivi-commande.html">
+          <i class="bi bi-book"></i>
+          <span>Mes ventes</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+     
+      
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="users-profile.html">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
-  
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
-  
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.html">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
-  
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-register.html">
           <i class="bi bi-card-list"></i>
           <span>Register</span>
         </a>
       </li><!-- End Register Page Nav -->
-  
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
       </li><!-- End Login Page Nav -->
-  
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.html">
           <i class="bi bi-dash-circle"></i>
           <span>Error 404</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
-  
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-blank.html">
           <i class="bi bi-file-earmark"></i>
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav -->
-  
+
     </ul>
-  
+
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
@@ -325,7 +447,7 @@
       <h1>Suivi des Commandes</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="accueil.html">Home</a></li>
           <li class="breadcrumb-item">Suivi des commandes</li>
         </ol>
       </nav>
@@ -338,312 +460,31 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Liste des Commandes  
-               
-                <button type="" class="btn btn-primary" id="nouvellecommande"  data-toggle="modal" data-target="#ajoutcommande">Ajouter Commande</button>
-            
+                                          
               </h5>
               <p></p>
-
-              <!-- Table with stripped rows -->
-              <div class="table-responsive">
-                <table class="table">
-                  <table class="table datatable">
+              <table class="table datatable" id="commande">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nom produit</th>
-                    <th scope="col">designation</th>
+                    <th scope="col">Nom</th>
                     <th scope="col">Quantité</th>
-                    <th scope="col">Date commande</th>
-                    <th scope="col">Etat de signature</th>
-                    <th scope="col">Date de signature</th>
-                    <th scope="col">Etat validation</th>
-                    <th scope="col">Date de validation</th>
-                    <th scope="col">Adresse</th>
-                      <th scope="col">Options</th>
-                    
-                  </tr>
+                    <th scope="col">Date</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jean Luc</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>10</td>
-                    <td>Joueurs qui joue des 02 pieds , polyvalent sur le terrain</td>
-                    <td>Camerounaise</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    <td>2016-05-25</td>
-                    
-                    <td>
-                          <ul class="list-inline m-0">
-                          
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button"  data-toggle="modal" data-target="#ajoutcommande" data-placement="top" title="Edit"
-                              style="margin-bottom: 10px; vertical-align: baseline;"
-                              ><i
-                                  class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
-                                  class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                          <li class="list-inline-item">
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#plusinfo" >Voire plus</button>
-                          </li>
-                          </ul>
-
-                      </td>
-                  </tr>
-                 
-                   <tr>
-                        <th scope="row">2</th>
-                        <td>Pierre</td>
-                        <td>Designer</td>
-                        <td>28</td>
-                        <td>6</td>
-                        <td>Joueurs qui joue des 02 pieds , polyvalent sur le terrain</td>
-                        <td>Camerounaise</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        <td>2016-05-25</td>
-                        
-                        <td>
-                          <ul class="list-inline m-0">
-                      
-                            <li class="list-inline-item">
-                              <button class="btn btn-success btn-sm " type="button" data-toggle="modal" data-target="#ajoutcommande" data-placement="top" title="Edit"
-                                style="margin-bottom: 10px; vertical-align: baseline;"><i class="bi bi-pencil-square"></i>Editer</button>
-                            </li>
-                            <li class="list-inline-item">
-                              <button class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top"
-                                title="Delete"><i class="bi bi-trash"></i>Supprimer</button>
-                            </li>
-                            <li class="list-inline-item" data-toggle="modal" data-target="#plusinfo"  >
-                              <button type="button" class="btn btn-warning btn-sm">Voire plus</button>
-                            </li>
-                          </ul>
-                      
-                        </td>
-                      </tr>
-
-                 
+                                  
+                                   
                 </tbody>
               </table>
-            </table>
-          </div>
               <!-- End Table with stripped rows -->
-
             </div>
-          </div>
-
+          </div> 
         </div>
       </div>
     </section>
 
-
-    <!-- modal ajout joueur -->
-<div class="modal fade show" id="ajoutcommandelast" tabindex="-1" role="dialog" aria-labelledby="ajoutcommande"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-            <div class="pt-4 pb-2">
-                <h5 class="card-title text-center pb-0 fs-4">Ajouter une Vente</h5>
-          
-              </div>
-          
-              <form class="row g-3 needs-validation" novalidate>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Nom</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom du vendeur obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Suffixe Login</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Suffixe du vendeur obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourName" class="form-label">Client</label>
-                  <input type="text" name="name" class="form-control" id="yourName" required>
-                  <div class="invalid-feedback">Nom du client obligatoire!</div>
-                </div>
-                <div class="col-12">
-                  <label for="yourEmail" class="form-label">Votre Email</label>
-                  <input type="email" name="email" class="form-control" id="yourEmail" required>
-                  <div class="invalid-feedback">Email obligatioire!</div>
-                </div>
-          
-                <div class="col-12">
-                  <label for="yourUsername" class="form-label">Le poste du joueur</label>
-                 
-                   
-                    <input type="text" name="username" class="form-control" id="yourUsername" required>
-                    <div class="invalid-feedback">poste principale du joueur.</div>
-                  </div>
-                </div>
-          
-                <div class="col-12">
-                  <label for="yourPassword" class="form-label">Date de naissance</label>
-                  <input type="text" name="password" class="form-control" id="yourPassword" required>
-                  <div class="invalid-feedback">date de naissance du joueur!</div>
-                </div>
-               
-              </form>
-          
-           
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Sauvegarder</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- End modal -->
-
-    <!-- modal plus d'informations du joueur -->
-    <div class="modal fade show" id="plusinfo" tabindex="-1" role="dialog" aria-labelledby="plusinfo"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <div>
-                Nom du footBalleur : Jean Pierre 
-
-                Caracteristiques :  Joue des 2 pieds , bon attaquant
-
-                Pays d'origine : Cameroun 
-
-
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- End modal -->
-
-  </main><!-- End #main -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="ajoutcommande" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Distributeur Paiecash</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    <div class="modal-body">
-      <div class="card mb-3">
-    
-        <div class="card-body">
-    
-          <div class="pt-4 pb-2">
-            <h5 class="card-title text-center pb-0 fs-4">Ajouter une Commande</h5>
-    
-          </div>
-    
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="col-12">
-              <label for="yourName" class="form-label">Nom du produit </label>
-              <input type="text" name="name" class="form-control" id="yourName" required>
-              <div class="invalid-feedback">Entrez le nom du produit !</div>
-            </div>
-            <div class="col-12">
-              <label for="yourSuffixe" class="form-label">Designation</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" name="suffixe" class="form-control" id="yourSuffixe" required>
-                <div class="invalid-feedback">Please choose a usersuffixe.</div>
-              </div>
-            </div>
-              <div class="col-12">
-                <label for="yourClient" class="form-label">Quantité</label>
-                <input type="text" name="client" class="form-control" id="yourClient" required>
-                <div class="invalid-feedback">Nom du client obligatoire!</div>
-              </div>
-              
-              <div class="col-12">
-                <label for="yourDate" class="form-label">Date Commande</label>
-                <input type="date" name="date" class="form-control" id="yourDate" required>
-                <div class="invalid-feedback">Date de commande obligatoire!</div>
-              </div> 
-              <div class="col-12">
-                <label for="yourEtat" class="form-label">Etat Signature</label>
-                <input type="number" name="etat" class="form-control" id="yourEtat" required>
-                <div class="invalid-feedback">Etat de signature obligatoire!</div>
-              </div>   
-              <div class="col-12">
-                <label for="yourDateSignature" class="form-label">Date Signature</label>
-                <input type="date" name="datesignature" class="form-control" id="yourDateSignature" required>
-                <div class="invalid-feedback">Date de signature obligatoire!</div>
-              </div>      
-              <div class="col-12">
-                <label for="yourEtatValidation" class="form-label">Etat Validattion</label>
-                <input type="number" name="etatvalidation" class="form-control" id="yourEtatValidation" required>
-                <div class="invalid-feedback">Etat de validation obligatoire!</div>
-              </div> 
-              <div class="col-12">
-                <label for="yourDateValidation" class="form-label">Date Validation</label>
-                <input type="date" name="datevalidation" class="form-control" id="yourDateValidation" required>
-                <div class="invalid-feedback">Date de validation obligatoire!</div>
-              </div>    
-              <div class="col-12">
-                <label for="yourAdresse" class="form-label">Adresse</label>
-                <input type="text" name="adresse" class="form-control" id="yourAdresse" required>
-                <div class="invalid-feedback">Adresse obligatoire!</div>
-              </div>           
-            <div class="col-12">
-              <button class="btn btn-primary w-100" type="submit">Enregistrer Commande</button>
-            </div>
-          </form>
-    
-        </div>
-      </div>
-    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<footer id="footer" class="footer">
-  <div class="copyright">
-    &copy; Copyright <strong><span>PaieCash</span></strong>. All Rights Reserved
-  </div>
-  
-</footer><!-- End Footer -->
-
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+</main>
   <!-- Vendor JS Files -->
   <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script> -->
 
@@ -668,10 +509,8 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- end   -->
 
-  <!-- jquery  JS Files -->
+   <!-- jquery  JS Files -->
 
-    
-    
     <script src="assets/vendor/jquery/jquery.min.js"></script>
       <script src="assets/vendor/jquery/jquery.livequery.js"></script>
      
@@ -680,8 +519,10 @@
       <!-- Template Main JS File -->
       <script src="assets/js/main.js"></script>
   <script src="assets/js/custum.js"></script>
-
-
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.livequery.js"></script>
+  
+  <script src="assets/js/commande.js  "></script>
 </body>
 
 </html>

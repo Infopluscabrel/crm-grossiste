@@ -1,66 +1,23 @@
 const path = "http://localhost:5000";
 
-//function pour remplir le select option
-const selectArticle_url =
-	"http://localhost:5000/article/all";
-
-// Defining async function
-async function getapi(url) {
-	
-	// Storing response
-	const response = await fetch(url);
-	
-	// Storing data in form of JSON
-	var data = await response.json();
-	console.log(data);
-	if (response) {
-		hideloader();
-	}
-	show(data);
-}
-// Calling that async function
-getapi(selectArticle_url);
-
-// Function to hide the loader
-function hideloader() {
-	
-}
-// Function to define innerHTML for HTML table
-function show(data) {
-    console.log(data);
-
-    
-	let select =
-		`<option>
-    selectionnez le nom de l'article
-    </option>`;
-	
-	// Loop to access name row
-	 for (let r of data.data) {
-		select += `<option>      
-	    ${r.NOM_PRODUIT}    
-    </option>`;
-	}
-  
-	// Setting innerHTML as select variable
-	document.getElementById("entree").innerHTML = select;
-}
-
-
 //fonction pour enregistrer un stock
 $('#saveStock').livequery('submit',   function(e){ e.preventDefault() ; 
     var nom = document.getElementById("entree").value;
+	console.log(nom);
     var quantite = document.getElementById("yourEmail").value;
     var user = JSON.parse( localStorage.getItem('user'));
     	console.log(user);
-    var proprietaire = user.USE_ID_USER;  
+    var proprietaire = user.ID_USER;  
           console.log(proprietaire);
- 	var data  = {id: nom, quantite: quantite};
+ 	var data  = {id: nom, quantite: quantite, proprietaire: proprietaire};
  	 console.log(data);
 
   	$.post("http://localhost:5000/article/stock/entree", data, function(puerto){
 
    console.log(puerto) ;
+   document.getElementById("entree").value = "";
+   document.getElementById("yourEmail").value ="";
+   window.location.href="stocks-list.html";
   }, 'json');
 
   return false;
@@ -84,7 +41,7 @@ async function getapi() {
         
    var data  = { proprietaire: ""+propriétaire};
     console.log(data);
-	$.get("http://localhost:5000/stock/entree/all", data, function(puerto){
+	$.get("http://localhost:5000/article/stock/entree/all", data, function(puerto){
     var user = JSON.parse( localStorage.getItem('user'));
     console.log(user);
     var user_id = user.ID_USER;
