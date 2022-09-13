@@ -16,7 +16,7 @@ $.each(panier, function(key, value){
 
 });
 $('#validerfacture').livequery('click', function(e){ e.preventDefault() ;
-        window.location.href="Moyenspayement.html";
+   window.location.href="Moyenspayement.html";
   });
 
 
